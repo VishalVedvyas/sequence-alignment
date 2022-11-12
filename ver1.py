@@ -139,6 +139,13 @@ def getAlignments2(s1,s2):
 
 # alignSequenceDivideAndConquer(generateInput('ACGT', [3,6,1,1,5,6,7,8,9,20]),generateInput('TACG', [1,2,0,4,3,2,0,5,6,17]))
 # alignSequence(generateInput('ACGT', [3,6,1,1,5,6,7,8,9,20]),generateInput('TACG', [1,2,0,4,3,2,0,5,6,17]))
-print(getAlignments2(generateInput('ACGT', [3,6,1,1,5,6,7,8,9,20]),generateInput('TACG', [1,2,0,4,3,2,0,5,6,17])))
+verify = getAlignments2(generateInput('ACGT', [3,6,1,1,5,6,7,8,9,20]),generateInput('TACG', [1,2,0,4,3,2,0,5,6,17]))
+costcheck = 0
+for i in range(len(verify[0])):
+    if verify[0][i] == "_" or verify[1][i] == "_":
+        costcheck += delta
+    else:
+        costcheck += alphas[convertChar(verify[0][i])][convertChar(verify[1][i])]
+print(costcheck)
 
 # getAlignments2('ACTG', 'TACG')
