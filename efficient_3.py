@@ -38,12 +38,9 @@ def generateInput(inputStr, ids):
         inputStr = transformString(inputStr,id)
     opCnt = len(ids)
     newLength = len(inputStr)
-    print('Performing string length validation')
     if validateStringLength(oldLength, opCnt, newLength):
-        print('Validation checks passed')
-    else:
-        print('Validation checks failed')
-    return inputStr
+        return inputStr
+    return None
 
 def getAlignments(cost,s1,s2):
     i = len(s2)
